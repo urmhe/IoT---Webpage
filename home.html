@@ -1,0 +1,55 @@
+<!--This file represents the landing page for the website-->
+<!DOCTYPE html>
+    <html>
+        <head>
+            <!--character set-->
+            <meta charset="UTF-8">
+
+            <!--Viewport for responsive design-->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!--Stylesheet for home page-->
+            <link rel="stylesheet" type="text/css" href="home_style.css">
+            
+            <!--Font from google-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+            
+            <!--Icon-->
+            <link rel="icon" type="image/svg" href="icons/controller_icon.svg">
+        </head>
+        <body>
+            <!--Header to set the title and the headline of the page-->
+            <header>
+                <title>Home</title>
+                <h1>Welcome to</h1>
+            </header>
+
+            <!--main container which takes up the rest of the page-->
+            <div id="main_container">
+                <div id="nav_container" class="column">
+                    <div id="text_column" class="column">
+                        <div id="text_row" class="row">
+                            <!--game title using different colors-->
+                            <h2 id="game_title1">Press</h2>
+                            <h2 id="game_title2">the</h2>
+                            <h2 id="game_title3">Button</h2>
+                        </div>
+                        <h3 id="subtitle">Do you have what it takes to do it?</h3>
+                        <img id="button_img" src="icons/button_press.svg">
+                    </div>
+                    
+                    <!--row container for the two menu buttons-->
+                    <div id="buttonContainer" class="row">
+                        <button id="rule_button" class="menu_button" onclick = "window.location.href='rules.html';">Game Rules</button>
+                        <button id="play_button" class="menu_button" onclick="window.location.href='play.html';">Play</button>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </body>
+
+    </html>

@@ -1,0 +1,184 @@
+
+html {
+    height:100%; /* Needed to set main_container to 100% */
+    overflow:auto;
+}
+
+body {
+    background-color:#1c1c1c ;
+    padding:0px;
+    margin:0px;
+    height:100%; /* Needed to set main_container to 100% */
+}
+
+header {
+    height:6%;
+    margin:0px;
+}
+
+h1 {
+    background-color: #252525;
+    padding-top:6px;
+    text-align: center;
+    margin:0px;
+    color:#ffffff;
+    font-family: 'Great Vibes', cursive;
+    font-size:40px;
+}
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+
+#subtitle {
+    text-align: center;
+}
+
+#game_title1, #game_title2, #game_title3 {
+    font-family:'Great Vibes', cursive;
+    margin:0px;
+    font-size: 50px;
+}
+
+#game_title1 {
+    color: #e37b05;
+}
+
+#game_title2 {
+    color: #02d943;
+}
+
+#game_title3 {
+    color: #c90234;
+}
+
+/* main container with header + container size = full viewport */
+#main_container {
+    margin:0px;
+    display:flex;
+    flex-direction: column;
+    height:94%;
+    justify-content: center;
+    align-items:center;
+}
+
+/* grey container which contains the buttons and text elements */
+#nav_container {
+    height:90%;
+    width: 75%;
+    background-color: #252525;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+/* reusable column class */
+.column {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+    padding: 2px;
+}
+
+/* column which contains the text elements of the nav_container */
+#text_column {
+    width: 90%;
+    height: 55%;
+}
+
+/* row with the game title elements */
+#text_row {
+    justify-content: center;
+    width: 70%;
+}
+
+#button_img {
+    width:128px;
+    height:128px;
+}
+
+/* reusable row class */
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+/* container with the navigation buttons */
+#buttonContainer {
+    width: 90%;
+    height: 35%;
+    gap: 10px;
+}
+
+/* button design */
+.menu_button {
+    width: 40%;
+    height: 50%;
+    max-width: 300px;
+    min-width: 175px;
+    max-height: 70px;
+    min-height: 55px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    background-color: #e37b05;
+    color: white;
+    font-size:19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* animate button to popOut using a scale transformation */
+.menu_button:hover {
+    border: 2px solid white;
+    animation: popOut;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes popOut {
+    50% {transform: scale(1.1,1.1)}
+}
+
+
+@media screen and (max-width:425px) {
+    /* Make nav_container wider to use more of the limited device space */
+    #nav_container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-height: 750px) {
+
+    /* if screen height is too low then layout might get squished so we set a min height and adjust
+        font sizes and picture size to fit better */
+    body {
+        min-height: 650px;
+    }
+
+    #game_title1, #game_title2, #game_title3 {
+        font-size: 42px;
+    }
+
+    .menu_button {
+        font-size: 18px;
+    }
+
+    #button_img {
+        width:90px;
+        height:90px;
+    }
+
+    #subtitle {
+        font-size: 18px;
+    }
+}
+
