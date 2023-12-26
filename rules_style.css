@@ -1,0 +1,166 @@
+html {
+    height:100%;
+    width: 100%;
+    overflow:auto;
+}
+
+body {
+    background-color:#1c1c1c;
+    padding:0px;
+    margin:0px;
+    width: 100%;
+}
+
+/* header fixed at the top */
+header {
+    margin:0px;
+    position:fixed;
+    width: 100%;
+    top:0;
+}
+
+h1 {
+    background-color: #252525;
+    padding-top:6px;
+    padding-bottom: 3px;
+    text-align: center;
+    margin:0px;
+    color:#ffffff;
+    font-family: 'Great Vibes', cursive;
+    font-size:35px;
+}
+
+h2, h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.orange {
+    color: #e37b05;
+}
+
+.red {
+   color: #c90234;
+}
+
+.green {
+    color: #02d943
+}
+
+/* style for list item */
+li {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+ol {
+    text-align: center;
+    list-style-position: inside;
+}
+
+/* textstyle for most paragraphs of the page*/
+.description {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+/* main container */
+#main_container {
+    width: fill;
+    margin:0px;
+    display:grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    justify-items: stretch;
+    padding: 10px;
+    margin-top: 55px;
+}
+
+/* Standard container that is used to contain all information elements */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 7px;
+    background-color: #252525;
+    padding: 8px;
+}
+
+/* button style */
+.play_button_fixed {
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    top:13px;
+    right:11px;
+    background-color: #252525;
+    border-color: #e37b05;
+    border-radius: 5px;
+    color: #e37b05;
+    border: 1px solid #e37b05;
+    padding: 4px;
+}
+
+.play_button_fixed:hover {
+    background-color: white;
+}
+
+/* img size inside button */
+.play_button_fixed img {
+    height:14px;
+}
+
+/* styling for the header of each box */
+.rule_header {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    margin:0px;
+}
+
+/* Invisible box for vertical space */
+#vertical_space_regular {
+    height: 10px;
+}
+
+/* Invisible box for vertical space */
+#vertical_space_large {
+    height: 20;
+}
+
+/* fade in animation */
+.fadeIn {
+    animation-name: fadeInBottom;
+    animation-duration: 1s;
+    animation-play-state: running;
+}
+
+@keyframes fadeInBottom {
+from {
+    opacity:0;
+    transform: translate3d(0, 20px, 0);
+}
+to {
+    opacity: 1;
+}
+}
+
+/* if screen is a certain width then change grid from 1 to 2 columns */
+@media screen and (min-width: 700px) {
+    #main_container {
+        width: fill;
+        margin:0px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        justify-items: stretch;
+        padding: 10px;
+        margin-top: 55px;
+    }
+}
