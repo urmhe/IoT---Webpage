@@ -94,6 +94,8 @@ ol {
 
 /* button style */
 .play_button_fixed {
+    width: 80px;
+    height: 30px;
     text-align: center;
     font-size: 14px;
     position: fixed;
@@ -113,7 +115,13 @@ ol {
 
 /* img size inside button */
 .play_button_fixed img {
-    height:14px;
+    height:18px;
+    vertical-align: middle;
+}
+
+.play_button_fixed span {
+    vertical-align: middle;
+    font-size: 14px;
 }
 
 /* styling for the header of each box */

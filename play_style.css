@@ -1,0 +1,249 @@
+html {
+    height:100%;
+    width: 100%;
+    overflow:auto;
+}
+
+body {
+    background-color:#1c1c1c;
+    padding:0px;
+    margin:0px;
+    width: 100%;
+}
+
+/* header fixed at the top */
+header {
+    margin:0px;
+    position:fixed;
+    width: 100%;
+    top:0;
+}
+
+h1 {
+    background-color: #252525;
+    padding-top:6px;
+    padding-bottom: 3px;
+    text-align: center;
+    margin:0px;
+    color:#ffffff;
+    font-family: 'Great Vibes', cursive;
+    font-size:35px;
+}
+
+h2, h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.orange {
+    background-color: #e37b05;
+    color: white;
+}
+
+.red {
+    background-color: #c90234;
+    color: white;
+}
+
+.green {
+    background-color: #02d943;
+    color: white;
+}
+
+.grey {
+    background-color: rgb(234, 234, 234);
+    color: black;
+}
+
+/* button style */
+.rule_button_fixed {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    top:13px;
+    right:11px;
+    background-color: #252525;
+    border-color: #e37b05;
+    border-radius: 5px;
+    color: #e37b05;
+    border: 1px solid #e37b05;
+    padding: 4px;
+}
+
+.rule_button_fixed:hover {
+    background-color: white;
+}
+
+/* img inside button */
+.rule_button_fixed img {
+    height:18px;
+    vertical-align: middle;
+}
+
+/* text inside button */
+.rule_button_fixed span {
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* main container */
+#main_container {
+    width: fill;
+    margin:0px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 20px;
+    justify-items: stretch;
+    padding: 10px;
+    margin-top: 55px;
+}
+
+.grid_container {
+    display: grid;
+    column-gap: 10px;
+    justify-items: stretch;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 7px;
+    background-color: #252525;
+    padding: 8px;
+    margin: 0px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 7px;
+    background-color: #252525;
+    padding: 8px;
+    margin: 0px;
+}
+
+.container h3 {
+    font-size:larger;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+    padding: 8px;
+    margin: 0px;
+}
+
+.container .large_text {
+    font-weight: normal;
+}
+
+#prompt_container {
+    grid-column: 1 / 3;
+    background-color: rgb(234, 234, 234);
+}
+
+#prompt {
+    font-size: 19px;
+    font-weight:600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.fadeIn {
+    animation-name: fadeInBottom;
+    animation-duration: 200ms;
+    animation-play-state: running;
+}
+
+@keyframes fadeInBottom {
+from {
+    opacity:0;
+    transform: translate3d(0, 10px, 0);
+}
+to {
+    opacity: 1;
+}
+}
+
+#button_container {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    border-radius: 7px;
+    background-color: #252525;
+    padding: 8px;
+    margin: 0px;
+}
+
+button {
+    height: auto;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+    border-radius: 7px;
+    border: 0px;
+    color: white;
+    padding: 15px;
+}
+
+#shake_button img {
+    vertical-align: middle;
+    height: 38px;
+}
+
+.game_button:hover {
+    filter: brightness(85%);
+}
+
+.play_button {
+    grid-column: 1 / 3;
+    background-color: #1c1c1c;
+    border-radius: 7px;
+    border: 2px solid #e37b05
+}
+
+.play_button img {
+    height: 30px;
+    vertical-align: middle;
+}
+
+.play_button span {
+    vertical-align: middle;
+    font-size: 30px;
+    color: #e37b05;
+}
+
+.play_button:hover {
+    background-color: white;
+}
+
+/* screens like tablets */
+@media screen and (min-width: 700px) {
+    #button_container {
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        border-radius: 7px;
+        background-color: #252525;
+        padding: 8px;
+        margin: 0px;
+    }
+
+
+}
+
+/* adjust layout for large screens like laptops */
+@media screen and (min-width: 1000px) {
+
+}
+    
+
+
+
+
+
+
+
+
