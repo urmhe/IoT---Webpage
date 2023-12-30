@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!--character set-->
+        <meta charset="UTF-8">
+
+        <!--Viewport for responsive design-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Stylesheet for home page-->
+        <link rel="stylesheet" type="text/css" href="play_style.css">
+        
+        <!--Font from google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+        
+        <!--Tab icon-->
+        <link rel="icon" type="image/svg" href="../icons/controller_icon.svg">
+
+        <!--JS code used through by the page-->
+        <script src="../href.js"></script>
+        <script src="play.js" type="module"></script>
+    </head>
+    <body>
+        <header>
+            <!--Title of the browser tab-->
+            <title>Play</title>
+            <!--Title at the top of the page-->
+            <h1>Let's play</h1>
+            <!--Fixed button at the top right to go to play page-->
+            <button class="rule_button_fixed" onclick="moveToRules()"><img src="../icons/rule-icon.svg"><span> Rules</span></button>
+        </header>
+        <div id="main_container">
+            <div id="score_container" class="container">
+                <h3>Score</h3>
+                <h3 class="large_text">0</h3>
+            </div>
+            <div id="time_container" class="container">
+                <h3>Time</h3>
+                <h3 class="large_text">00:00:30</h3>
+            </div>
+            <div id="prompt_container" class="container">
+                <h3 id="prompt" class="fadeIn">Press 'Play' to start</h3>
+            </div>
+            <div id="button_container">
+                <button class="red game_button">R</button>
+                <button class="orange game_button">O</button>
+                <button class="green game_button">G</button>
+                <button id="shake_button" class="grey game_button"><img src="../icons/shake-svgrepo-com.svg"></button>
+            </div>
+            <button id="play_button" onclick=""><img src="../icons/controller_icon.svg"><span> Play</span></button>
+        </div>
+    </body>
+    </html>

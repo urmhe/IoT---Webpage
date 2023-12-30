@@ -72,6 +72,7 @@ ol {
 /* main container */
 #main_container {
     width: fill;
+    min-width: 300px;
     margin:0px;
     display:grid;
     grid-template-columns: 1fr;
@@ -162,13 +163,41 @@ to {
 /* if screen is a certain width then change grid from 1 to 2 columns */
 @media screen and (min-width: 700px) {
     #main_container {
-        width: fill;
-        margin:0px;
-        display:grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        justify-items: stretch;
-        padding: 10px;
-        margin-top: 55px;
     }
+}
+
+/* screens like laptops make layout more compact*/
+@media screen and (min-width: 1000px) {
+    #main_container {
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+    }
+
+    #overview {
+        grid-column: 2 / 3;
+    }
+    
+    #prompt_container {
+        grid-column: 3 / 4;
+    }
+
+    #prompt_t1 {
+        grid-column: 2 / 3;
+    }
+
+    #prompt_t2 {
+        grid-column: 3 / 4;
+    }
+
+    #special_rule {
+        grid-column: 2 / 3;
+    }
+
+    #score_points {
+        grid-column: 3 / 4;
+    }
+
+
+
 }

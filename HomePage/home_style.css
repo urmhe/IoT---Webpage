@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    height:7%;
+    height:auto;
     margin:0px;
 }
 
@@ -37,12 +37,14 @@ h3 {
     text-align: center;
 }
 
+/* general settings for game title*/
 #game_title1, #game_title2, #game_title3 {
     font-family:'Great Vibes', cursive;
     margin:0px;
     font-size: 50px;
 }
 
+/* set different colors for game titles */
 #game_title1 {
     color: #e37b05;
 }
@@ -55,8 +57,10 @@ h3 {
     color: #c90234;
 }
 
-/* main container with header + container size = full viewport */
+/* main container which takes up most of the screen */
 #main_container {
+    padding: 0px;
+    min-width: 300px;
     margin:0px;
     display:flex;
     flex-direction: column;
@@ -67,6 +71,7 @@ h3 {
 
 /* grey container which contains the buttons and text elements */
 #nav_container {
+    margin: 0px;
     height:90%;
     width: 75%;
     background-color: #252525;
@@ -110,15 +115,13 @@ h3 {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
-
+    gap: 12px;
 }
 
 /* container with the navigation buttons */
 #buttonContainer {
     width: 90%;
     height: 35%;
-    gap: 10px;
 }
 
 /* button design */
@@ -150,18 +153,24 @@ h3 {
     50% {transform: scale(1.1,1.1)}
 }
 
-
-@media screen and (max-width:425px) {
-    /* Make nav_container wider to use more of the limited device space */
+/* Make nav_container wider to use more of the limited device space */
+@media screen and (max-width: 500px) {
     #nav_container {
         width: 90%;
     }
 }
 
-@media screen and (max-height: 750px) {
+/* Increase size of button image on wider screens */
+@media screen and (min-width: 700px) {
+    #button_img {
+        width:156px;
+        height:156px;
+    }
+}
 
-    /* if screen height is too low then layout might get squished so we set a min height and adjust
-        font sizes and picture size to fit better */
+/* if screen height is too low then layout might get squished so we set a min height and adjust
+    font sizes and picture size to fit better */
+@media screen and (max-height: 750px) {
     body {
         min-height: 650px;
     }
@@ -182,5 +191,9 @@ h3 {
     #subtitle {
         font-size: 18px;
     }
-}
 
+    /* reduce main container size slightly so that on smaller phones there is no scrolling necessary*/
+    #main_container {
+        height: 91%;
+    }
+}

@@ -17,7 +17,10 @@
             <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
             
             <!--Icon-->
-            <link rel="icon" type="image/svg" href="icons/controller_icon.svg">
+            <link rel="icon" type="image/svg" href="../icons/controller_icon.svg">
+
+            <!--Contains all JS Code that is used throughout this page-->
+            <script src="../href.js"></script>
         </head>
         <body>
             <!--Header to set the title and the headline of the page-->
@@ -37,13 +40,13 @@
                             <h2 id="game_title3">Button</h2>
                         </div>
                         <h3 id="subtitle">Do you have what it takes to do it?</h3>
-                        <img id="button_img" src="icons/button_press.svg">
+                        <img id="button_img" src="../icons/button_press.svg">
                     </div>
                     
                     <!--row container for the two menu buttons-->
                     <div id="buttonContainer" class="row">
-                        <button id="rule_button" class="menu_button" onclick = "window.location.href='rules.html';">Game Rules</button>
-                        <button id="play_button" class="menu_button" onclick="window.location.href='play.html';">Play</button>
+                        <button id="rule_button" class="menu_button" onclick ="moveToRules()">Game Rules</button>
+                        <button id="play_button" class="menu_button" onclick="moveToPlay()">Play</button>
                     </div>
                     
                 </div>

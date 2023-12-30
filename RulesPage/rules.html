@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!--character set-->
+        <meta charset="UTF-8">
+
+        <!--Viewport for responsive design-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Stylesheet for home page-->
+        <link rel="stylesheet" type="text/css" href="rules_style.css">
+        
+        <!--Font from google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+        
+        <!--Tab icon-->
+        <link rel="icon" type="image/svg" href="../icons/controller_icon.svg">
+
+        <!--JS code used throughout the page-->
+        <script src="../href.js"></script>
+    </head>
+    <body>
+        <header>
+            <!--Title of the browser tab-->
+            <title>Rules</title>
+            <!--Title at the top of the page-->
+            <h1>Rules</h1>
+            <!--Fixed button at the top right to go to play page-->
+            <button class="play_button_fixed" onclick = "moveToPlay()"><img src="../icons/controller_icon.svg"><span> Play</span></button>
+        </header>
+        <div id="main_container">
+            <!--Overview container-->
+            <div id="overview" class="container fadeIn">
+                <h3 class="rule_header">
+                    General Overview
+                </h3>
+                <p class="description">
+                    The goal of the game is to earn as many points as possible within the initial time period of 30 seconds.
+                </p>
+                <p class="description">
+                    Points are earned by performing the correct action based on the prompts that you are given.
+                    Based on the wording of the prompt you will have to press the correct button or shake your device to earn a point.
+                </p>
+            </div>
+
+            <!--Prompt explanation container-->
+            <div id="prompt_container" class="container fadeIn">
+                <h3 class="rule_header">
+                    Prompts
+                </h3>
+                <p class="description">There are two types of prompts:</p>
+                <ol>
+                    <li>Press <span class="red">green</span></li>
+                    <li>Press the <span class="orange">red</span> button</li>
+                </ol>
+                <p class="description">Of course, the prompt text and color is randomised to make the game more difficult.</p>
+            </div>
+
+            <!--Prompt type 1 explanation container-->
+            <div id="prompt_t1" class="container fadeIn">
+                <h3 class="rule_header">
+                    Prompt type #1
+                </h3>
+                <p class="description">You are expected to press the button that corresponds to the text color that is used within the prompt.</p>
+                <p class="description">Example: Press <span class="green">orange</span></p>
+                <p class="description">To get the point, the green button needs to be pressed.</p>
+            </div>
+
+            <!--Prompt type 2 explanation container-->
+            <div id="prompt_t2" class="container fadeIn">
+                <h3 class="rule_header">
+                    Prompt type #2
+                </h3>
+                <p class="description">You are expected to press the button that is described by the prompt.</p>
+                <p class="description">Example: Press the <span class="orange">red</span> button</p>
+                <p class="description">To get the point, the red button needs to be pressed.</p>
+            </div>
+
+            <!--Special rule explanation container-->
+            <div id="special_rule" class="container fadeIn">
+                <h3 class="rule_header">
+                    Special rule
+                </h3>
+                <p class="description">For both prompt types, if the text is the same as the text color, then instead of pressing a button you have to shake your device.</p>
+                <p class="description">Example: Press the <span class="orange">orange</span> button</p>
+                <p class="description">To get the point, you have to shake your device.</p>
+                <p class="description">Note: For devices that do not have the necessary sensors, a shake button will be provided.</p>
+            </div>
+            <div id="score_points" class="container fadeIn">
+                <h3 class="rule_header">
+                    Timer and scoring points
+                </h3>
+                <p class="description">The timer initially starts at 30 seconds. If the timer ever hits 0, then the game is over.</p>
+                <p class="description">Performing the correct action will grant you one point and also increases the remaining time by 1 second.</p>
+                <p class="description">Performing the wrong action will result in a game over.</p>
+            </div>
+        </div>
+
+    </body>
+    </html>
