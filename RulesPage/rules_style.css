@@ -54,6 +54,7 @@ li {
     font-size: 15px;
 }
 
+/* centered list */
 ol {
     text-align: center;
     list-style-position: inside;
@@ -98,7 +99,7 @@ ol {
     width: 80px;
     height: 30px;
     text-align: center;
-    font-size: 14px;
+    font-size: 0px;
     position: fixed;
     top:13px;
     right:11px;
@@ -197,7 +198,5 @@ to {
     #score_points {
         grid-column: 3 / 4;
     }
-
-
 
 }

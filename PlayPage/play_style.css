@@ -34,7 +34,7 @@ h2, h3 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
+/* colors an element with a certain color and sets text color to white */
 .orange {
     background-color: #e37b05;
     color: white;
@@ -50,6 +50,7 @@ h2, h3 {
     color: white;
 }
 
+
 .grey {
     background-color: rgb(234, 234, 234);
     color: black;
@@ -60,10 +61,10 @@ h2, h3 {
     width: 80px;
     height: 30px;
     text-align: center;
-    font-size: 14px;
     position: fixed;
     top:13px;
     right:11px;
+    font-size: 0px;
     background-color: #252525;
     border-color: #e37b05;
     border-radius: 5px;
@@ -101,17 +102,7 @@ h2, h3 {
     margin-top: 55px;
 }
 
-.grid_container {
-    display: grid;
-    column-gap: 10px;
-    justify-items: stretch;
-    grid-template-columns: repeat(2, 1fr);
-    border-radius: 7px;
-    background-color: #252525;
-    padding: 8px;
-    margin: 0px;
-}
-
+/* used primarily for containers that contain text like score, time, etc*/
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -136,11 +127,13 @@ h2, h3 {
     font-weight: normal;
 }
 
+/* container which contains the prompt */
 #prompt_container {
     grid-column: 1 / 3;
     background-color: rgb(234, 234, 234);
 }
 
+/* styling of the prompt text */
 #prompt {
     font-size: 19px;
     font-weight:600;
@@ -149,6 +142,7 @@ h2, h3 {
     color: black;
 }
 
+/* Animation that fadesIn from Bottom */
 .fadeIn {
     animation-name: fadeInBottom;
     animation-duration: 200ms;
@@ -165,6 +159,7 @@ to {
 }
 }
 
+/* Container which contains the game buttons */
 #button_container {
     grid-column: 1 / 3;
     display: grid;
@@ -187,20 +182,25 @@ button {
     padding: 15px;
 }
 
+/* styling for shake button */
 #shake_button img {
     vertical-align: middle;
     height: 38px;
 }
 
+/* on hover make button slightly darker*/
 .game_button:hover {
     filter: brightness(85%);
 }
 
+/* styling for play button */
 #play_button {
     grid-column: 1 / 3;
     background-color: #1c1c1c;
+    font-size: 0px;
     border-radius: 7px;
-    border: 2px solid #e37b05
+    border: 2px solid #e37b05;
+    vertical-align: middle;
 }
 
 #play_button img {
@@ -212,6 +212,7 @@ button {
     vertical-align: middle;
     font-size: 30px;
     color: #e37b05;
+    text-align: center;
 }
 
 #play_button:hover {
