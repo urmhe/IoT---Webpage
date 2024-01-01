@@ -32,26 +32,26 @@
             <button class="rule_button_fixed" onclick="moveToRules()"><img src="../icons/rule-icon.svg"><span> Rules</span></button>
         </header>
         <!--Main container which contains all of the elements apart from the header-->
-        <div id="main_container">
+        <div id="main_container" class="fadeInSlow">
             <!--Container for tracking the score-->
             <div id="score_container" class="container">
                 <h3>Score</h3>
-                <h3 class="large_text">0</h3>
+                <h3 id="score_counter" class="large_text">0</h3>
             </div>
             <!--Container for tracking the time-->
             <div id="time_container" class="container">
                 <h3>Time</h3>
-                <h3 class="large_text">00:00:30</h3>
+                <h3 id="countdown_text" class="large_text">00:00:00</h3>
             </div>
             <!--Container to display the current prompt-->
             <div id="prompt_container" class="container">
-                <h3 id="prompt" class="fadeIn">Press 'Play' to start</h3>
+                <h3 id="prompt">Press <span id="prompt_colored">'Play'</span> to start</h3>
             </div>
             <!--Contains all the buttons that are necessary to play the game-->
             <div id="button_container">
-                <button class="red game_button">R</button>
-                <button class="orange game_button">O</button>
-                <button class="green game_button">G</button>
+                <button id="red_game_button" class="red game_button">R</button>
+                <button id="blue_game_button" class="blue game_button">B</button>
+                <button id="green_game_button" class="green game_button">G</button>
                 <button id="shake_button" class="grey game_button"><img src="../icons/shake-svgrepo-com.svg"></button>
             </div>
             <!--Play button to start the game-->

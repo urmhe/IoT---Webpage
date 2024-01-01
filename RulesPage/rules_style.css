@@ -35,8 +35,8 @@ h2, h3 {
 }
 
 
-.orange {
-    color: #e37b05;
+.blue {
+    color: #0281e8;
 }
 
 .red {
@@ -154,7 +154,7 @@ ol {
 @keyframes fadeInBottom {
 from {
     opacity:0;
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 10px, 0);
 }
 to {
     opacity: 1;

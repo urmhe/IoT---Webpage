@@ -35,18 +35,18 @@ h2, h3 {
 }
 
 /* colors an element with a certain color and sets text color to white */
-.orange {
-    background-color: #e37b05;
+.blue {
+    background-color: #0281e8;
     color: white;
 }
 
 .red {
-    background-color: #c90234;
+    background-color: rgb(201, 2, 52);
     color: white;
 }
 
 .green {
-    background-color: #02d943;
+    background-color: rgb(2, 217, 67);
     color: white;
 }
 
@@ -114,6 +114,7 @@ h2, h3 {
     margin: 0px;
 }
 
+/* header of a container */
 .container h3 {
     font-size:larger;
     color: white;
@@ -123,6 +124,7 @@ h2, h3 {
     margin: 0px;
 }
 
+/* subheader of a container */
 .container .large_text {
     font-weight: normal;
 }
@@ -135,17 +137,24 @@ h2, h3 {
 
 /* styling of the prompt text */
 #prompt {
-    font-size: 19px;
+    font-size: 18px;
     font-weight:600;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: black;
 }
 
-/* Animation that fadesIn from Bottom */
-.fadeIn {
+#prompt_colored {
+    font-size: 18px;
+    font-weight:600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.fadeInSlow {
     animation-name: fadeInBottom;
-    animation-duration: 200ms;
+    animation-duration: 1s;
     animation-play-state: running;
 }
 
@@ -158,6 +167,18 @@ to {
     opacity: 1;
 }
 }
+
+/* duplicated animation to make it possible to restart animation with 
+JS when new prompt will be loaded. */
+@keyframes fadeInBottom2 {
+    from {
+        opacity:0;
+        transform: translate3d(0, 10px, 0);
+    }
+    to {
+        opacity: 1;
+    }
+    }
 
 /* Container which contains the game buttons */
 #button_container {
@@ -179,27 +200,26 @@ button {
     border-radius: 7px;
     border: 0px;
     color: white;
-    padding: 15px;
+    padding: 10px;
 }
 
-/* styling for shake button */
+
+#shake_button {
+    display: none;
+}
+
+/* styling for shake button icon */
 #shake_button img {
     vertical-align: middle;
     height: 38px;
 }
 
-/* on hover make button slightly darker*/
-.game_button:hover {
-    filter: brightness(85%);
-}
-
 /* styling for play button */
 #play_button {
     grid-column: 1 / 3;
-    background-color: #1c1c1c;
+    background-color: #252525;
     font-size: 0px;
     border-radius: 7px;
-    border: 2px solid #e37b05;
     vertical-align: middle;
 }
 
@@ -213,10 +233,6 @@ button {
     font-size: 30px;
     color: #e37b05;
     text-align: center;
-}
-
-#play_button:hover {
-    background-color: white;
 }
 
 /* screens like tablets - add additional column to button container and increase button size */
@@ -264,5 +280,18 @@ button {
         grid-column: 2 / 4;
     }
 
+}
+
+/* for buttons that do are not a hyperlink, hover pseudoclass can be sticky on mobile devices
+    below code checks if the device supports true hover i.e non touch devices with a mouse */
+@media (hover: hover) {
+    #play_button:hover {
+        filter: brightness(85%);
+    }
+
+    /* on hover make button slightly darker*/
+.game_button:hover {
+    filter: brightness(85%);
+}
 }
     
