@@ -9,6 +9,7 @@ body {
     padding:0px;
     margin:0px;
     width: 100%;
+    min-width: 300px;
 }
 
 /* header fixed at the top */
@@ -73,7 +74,6 @@ ol {
 /* main container */
 #main_container {
     width: fill;
-    min-width: 300px;
     margin:0px;
     display:grid;
     grid-template-columns: 1fr;

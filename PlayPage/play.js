@@ -2,18 +2,23 @@ import { ColorGame } from "./util/colorGame.js";
 
 // create game object
 const game = new ColorGame();
-// get shake button
-const shakeButton = document.getElementById("shake_button");
 
 // tracks if motionevent should be ignored
 let ignoreMotionEvent = false;
 
+
+// make adjustments to html /////////////
+
 // assign onclick functions to game related buttons
+const shakeButton = document.getElementById("shake_button");
 shakeButton.onclick = function () {game.gameInput('shake')};
 document.getElementById("red_game_button").onclick = function () {game.gameInput('red');}
 document.getElementById("blue_game_button").onclick = function () {game.gameInput('blue');}
 document.getElementById("green_game_button").onclick = function () {game.gameInput('green');}
 document.getElementById("play_button").onclick = function () {onPlayButtonPressed();}
+
+
+
 
 // DeviceMotionEvent can only be used with HTTPS
 if (location.protocol == 'https:') {
@@ -38,6 +43,13 @@ if (location.protocol == 'https:') {
     shakeButton.style.display = 'inline';
 }
 
+// if shake button is not displayed and screen is wide enough then make blue button take up more space
+if (window.screen.availWidth >= 700 && shakeButton.style.display == "") {
+    document.getElementById("blue_game_button").style.gridColumn = "1 / 3";
+}
+
+// end of adjustments to html /////////////
+
 /* This methods is called when a deviceMotionEvent happens. It checks whether the motion values
     exceed the threshold and then calls the gameInput function with a shake input. */
 function handleDeviceMotion(motionEvent) {
@@ -45,8 +57,6 @@ function handleDeviceMotion(motionEvent) {
     var x = motionEvent.accelerationIncludingGravity.x;
     var y = motionEvent.accelerationIncludingGravity.y;
     var z = motionEvent.accelerationIncludingGravity.z;
-
-    console.log("x: " + x + " y: " + y + "z: " + z);
     
     // if device motion exceeds threshold then we treat it as a shake game input
     if (!ignoreMotionEvent && (x > threshold || y > threshold || z > threshold)) {
@@ -56,9 +66,7 @@ function handleDeviceMotion(motionEvent) {
         // to prevent that shaking the device can trigger a game input multiple times
         // which would likely result in a game over, we ignore the events for a small time period
         setTimeout(() => ignoreMotionEvent=false, 250)
-        console.log("x: " + x + " y: " + y + "z: " + z);
     }
-
 }
 
 /* Change icon, text and onclick depending on the current state.
@@ -68,6 +76,7 @@ function onPlayButtonPressed() {
 
     let button = document.getElementById("play_button");
 
+    // second child is span element which contains the text
     if (button.children[1].textContent == ' Play') {
         game.startGame();
         // change to quit button

@@ -1,3 +1,4 @@
+/* This file contains JS functions for accessing other pages */
 
 // Move to RulesPage
 function moveToRules() {
