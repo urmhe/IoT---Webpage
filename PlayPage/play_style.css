@@ -97,7 +97,7 @@ h2, h3 {
     display:grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
-    row-gap: 20px;
+    row-gap: 15px;
     justify-items: stretch;
     padding: 10px;
     margin-top: 55px;

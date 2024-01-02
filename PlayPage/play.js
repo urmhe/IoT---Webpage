@@ -3,11 +3,9 @@ import { ColorGame } from "./util/colorGame.js";
 // create game object
 const game = new ColorGame();
 
-// tracks if motionevent should be ignored
+// track if motionevent should be ignored
 let ignoreMotionEvent = false;
 
-
-// make adjustments to html /////////////
 
 // assign onclick functions to game related buttons
 const shakeButton = document.getElementById("shake_button");
@@ -17,16 +15,12 @@ document.getElementById("blue_game_button").onclick = function () {game.gameInpu
 document.getElementById("green_game_button").onclick = function () {game.gameInput('green');}
 document.getElementById("play_button").onclick = function () {onPlayButtonPressed();}
 
-
-
-
 // DeviceMotionEvent can only be used with HTTPS
 if (location.protocol == 'https:') {
     // check if browser supports DeviceMotion
     if (window.DeviceMotionEvent) {
         if (confirm("Are you ok with using the acceleration of your device as a game input? Please note that if your device has no acceleration sensor then this will not work.")) {
             // user is ok with using the devicemotion as input
-            // remove shake button
             window.addEventListener('devicemotion', (event) => handleDeviceMotion(event));
         } else {
             // user does not want to use device acceleration -> display shake button
@@ -43,14 +37,14 @@ if (location.protocol == 'https:') {
     shakeButton.style.display = 'inline';
 }
 
-// if shake button is not displayed and screen is wide enough then make blue button take up more space
+// if shakebutton is not displayed then we add another css file to header which allows
+// blue game button to expand and take up the space that shake button would 
 if (window.screen.availWidth >= 700 && shakeButton.style.display == "") {
-    document.getElementById("blue_game_button").style.gridColumn = "1 / 3";
+    addCss("no_shake_button.css");
 }
 
-// end of adjustments to html /////////////
 
-/* This methods is called when a deviceMotionEvent happens. It checks whether the motion values
+/* This method is called when a deviceMotionEvent happens. It checks whether the motion values
     exceed the threshold and then calls the gameInput function with a shake input. */
 function handleDeviceMotion(motionEvent) {
     let threshold = 18;
@@ -64,8 +58,8 @@ function handleDeviceMotion(motionEvent) {
         game.gameInput('shake');
 
         // to prevent that shaking the device can trigger a game input multiple times
-        // which would likely result in a game over, we ignore the events for a small time period
-        setTimeout(() => ignoreMotionEvent=false, 250)
+        // which would likely result in a game over, we ignore the events for a short time period
+        setTimeout(() => ignoreMotionEvent=false, 300);
     }
 }
 
@@ -87,5 +81,18 @@ function onPlayButtonPressed() {
         button.innerHTML = '<img src="../icons/controller_icon.svg"><span> Play</span>';
     }
 }
+
+/* add new css file to head of document */
+function addCss(fileName) {
+    var head = document.head;
+    var link = document.createElement("link");
+  
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = fileName;
+  
+    head.appendChild(link);
+  }
+
 
 

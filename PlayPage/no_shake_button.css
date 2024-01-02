@@ -1,0 +1,8 @@
+
+/* If shake button isn't displayed then this css file is added to doc so that
+    blue button expands and takes up full available space */
+@media screen and (min-width: 700px) {
+    #blue_game_button {
+        grid-column: 1 / 3;
+    }
+}
